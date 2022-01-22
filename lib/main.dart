@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             flex: 2,
             child: Container(
+              padding: const EdgeInsets.all(20.0),
               child: const Text(
                 "Ini adalah Sebuah Teks",
               ),
