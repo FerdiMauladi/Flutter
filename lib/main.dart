@@ -36,36 +36,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Halaman Utama"),
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.menu))],
       ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                Text("Text 1"),
-                Text("Text 4"),
-                Text("Text 7"),
-              ],
+      body: Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              child: const Text(
+                "Ini adalah Sebuah Teks",
+              ),
+              color: Colors.red,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                Text("Text 2"),
-                Text("Text 5"),
-                Text("Text 8"),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                Text("Text 3"),
-                Text("Text 6"),
-                Text("Text 9"),
-              ],
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 100.0,
+          ),
+          Expanded(
+              child: Container(
+            color: Colors.blue,
+          ))
+        ],
       ),
     );
   }
