@@ -29,121 +29,437 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool loginScreen = true;
+  bool obscurepasswordLogin = true;
+  bool _obscurepasswordLogin = true;
+  bool obscurepasswordRegister = true;
+  bool _obscurepasswordRegister = true;
+  bool obscureconfirmpasswordRegister = true;
+  bool _obscureconfirmpasswordRegister = true;
+
+  final controller1 = TextEditingController();
+  final controller2 = TextEditingController();
+
+  clearText(TextEditingController _controller1, _controller2) {
+    _controller1.clear();
+    _controller2.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Halaman Utama"),
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.menu))],
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xff141e30), Color(0xff243b55)],
+        ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Text(
-              "ini text biasa berwarna indigo",
-              style: TextStyle(fontSize: 20.0, color: Color(0xff4b0082)),
-            ),
-            const Text(
-              "ini text miring",
-              style: TextStyle(
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-            const Text(
-              "ini text biasa tipis",
-              style: TextStyle(
-                fontWeight: FontWeight.w100,
-              ),
-            ),
-            const Text(
-              "ini text biasa tebal",
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-            const SizedBox(
-              height: 50.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(
-                  Icons.home,
-                  size: 50.0,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        backgroundColor: Colors.transparent,
+        resizeToAvoidBottomInset: true,
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      "Aplikasi",
+                      style: TextStyle(
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.bold,
+                        foreground: Paint()
+                          ..shader = const LinearGradient(
+                            colors: [
+                              Color(0xff141e30),
+                              Color(0xff243b55),
+                              //add more color here.
+                            ],
+                          ).createShader(
+                            const Rect.fromLTWH(100.0, 100.0, 100.0, 100.0),
+                          ),
+                      ),
+                    ),
+                  ),
                 ),
-                Icon(
-                  Icons.phone,
-                  size: 50.0,
+                Container(
+                  margin: const EdgeInsets.only(top: 80.0),
+                  height: 50.0,
+                  width: size.width * 0.75,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade400.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(50.0),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              loginScreen = true;
+                              clearText(controller1, controller2);
+                            });
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.all(5.0),
+                            decoration: BoxDecoration(
+                              color: loginScreen
+                                  ? Colors.white
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "LOGIN",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color:
+                                      loginScreen ? Colors.black : Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              loginScreen = false;
+                              clearText(controller1, controller2);
+                            });
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.all(5.0),
+                            decoration: BoxDecoration(
+                              color: loginScreen
+                                  ? Colors.transparent
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "REGISTER",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color:
+                                      loginScreen ? Colors.white : Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Icon(
-                  Icons.search,
-                  size: 50.0,
-                  color: Colors.red,
-                )
+                const SizedBox(
+                  height: 50.0,
+                ),
+                if (loginScreen)
+                  SizedBox(
+                    height: 300.0,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: Material(
+                            borderRadius: BorderRadius.circular(25.0),
+                            child: Container(
+                              height: 250,
+                              width: size.width * 0.75,
+                              foregroundDecoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(25.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    spreadRadius: 3,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 30,
+                          left: size.width * 0.02,
+                          child: Container(
+                            margin: const EdgeInsets.all(10.0),
+                            width: size.width * 0.65,
+                            child: TextField(
+                              controller: controller1,
+                              decoration: const InputDecoration(
+                                hintText: "Email/Username",
+                                prefixIcon: Icon(Icons.person),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 120,
+                          left: size.width * 0.02,
+                          child: Container(
+                            margin: const EdgeInsets.all(10.0),
+                            width: size.width * 0.65,
+                            child: TextField(
+                              controller: controller2,
+                              obscureText: _obscurepasswordLogin,
+                              decoration: InputDecoration(
+                                hintText: "Password",
+                                prefixIcon: const Icon(Icons.lock),
+                                suffixIcon: obscurepasswordLogin
+                                    ? GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            _obscurepasswordLogin =
+                                                !_obscurepasswordLogin;
+                                          });
+                                        },
+                                        child: Icon(
+                                          _obscurepasswordLogin
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                          color: Colors.black,
+                                        ))
+                                    : null,
+                                border: const OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 220,
+                          left: size.width * 0.15,
+                          child: SizedBox(
+                            width: size.width * 0.45,
+                            height: 55,
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor: const Color(0xff000000),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              onPressed: () {},
+                              child: const Text(
+                                "LOGIN",
+                                style: TextStyle(
+                                    color: Color(0xffffffff),
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                if (!loginScreen)
+                  SizedBox(
+                    height: 580.0,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: Material(
+                            borderRadius: BorderRadius.circular(25.0),
+                            child: Container(
+                              height: 520,
+                              width: size.width * 0.75,
+                              foregroundDecoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(25.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    spreadRadius: 3,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 30,
+                          left: size.width * 0.02,
+                          child: Container(
+                            margin: const EdgeInsets.all(10.0),
+                            width: size.width * 0.65,
+                            child: TextField(
+                              controller: controller1,
+                              keyboardType: TextInputType.name,
+                              decoration: const InputDecoration(
+                                hintText: "Masukan Nama",
+                                prefixIcon: Icon(Icons.person),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 120,
+                          left: size.width * 0.02,
+                          child: Container(
+                            margin: const EdgeInsets.all(10.0),
+                            width: size.width * 0.65,
+                            child: TextField(
+                              controller: controller2,
+                              keyboardType: TextInputType.name,
+                              decoration: const InputDecoration(
+                                hintText: "Masukan Username",
+                                prefixIcon: Icon(Icons.person),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 210,
+                          left: size.width * 0.02,
+                          child: Container(
+                            margin: const EdgeInsets.all(10.0),
+                            width: size.width * 0.65,
+                            child: const TextField(
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: InputDecoration(
+                                hintText: "Masukan Email",
+                                prefixIcon: Icon(Icons.email),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 300,
+                          left: size.width * 0.02,
+                          child: Container(
+                            margin: const EdgeInsets.all(10.0),
+                            width: size.width * 0.65,
+                            child: TextField(
+                              obscureText: _obscurepasswordRegister,
+                              decoration: InputDecoration(
+                                hintText: "Masukan Password",
+                                prefixIcon: const Icon(Icons.lock),
+                                suffixIcon: obscurepasswordRegister
+                                    ? GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            _obscurepasswordRegister =
+                                                !_obscurepasswordRegister;
+                                          });
+                                        },
+                                        child: Icon(
+                                          _obscurepasswordRegister
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                          color: Colors.black,
+                                        ))
+                                    : null,
+                                border: const OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 390,
+                          left: size.width * 0.02,
+                          child: Container(
+                            margin: const EdgeInsets.all(10.0),
+                            width: size.width * 0.65,
+                            child: TextField(
+                              obscureText: _obscureconfirmpasswordRegister,
+                              decoration: InputDecoration(
+                                hintText: "Masukan Confirm Password",
+                                prefixIcon: const Icon(Icons.lock),
+                                suffixIcon: obscureconfirmpasswordRegister
+                                    ? GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            _obscureconfirmpasswordRegister =
+                                                !_obscureconfirmpasswordRegister;
+                                          });
+                                        },
+                                        child: Icon(
+                                          _obscureconfirmpasswordRegister
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                          color: Colors.black,
+                                        ))
+                                    : null,
+                                border: const OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 490,
+                          left: size.width * 0.15,
+                          child: SizedBox(
+                            width: size.width * 0.45,
+                            height: 55,
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor: const Color(0xff000000),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              onPressed: () {},
+                              child: const Text(
+                                "REGISTER",
+                                style: TextStyle(
+                                    color: Color(0xffffffff),
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
               ],
             ),
-            const SizedBox(
-              height: 40.0,
-            ),
-            Container(
-              width: 300,
-              height: 150,
-              child: Image.network(
-                "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
-                fit: BoxFit.contain,
-              ),
-            ),
-            Container(
-              width: 300,
-              height: 150,
-              child: Image.asset("assets/images/gunung.jpg"),
-            ),
-            Container(
-              width: 300,
-              height: 150,
-              child: Image.asset("assets/images/gunung1.jpg"),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text(
-                "Ini adalah elevated button",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            OutlinedButton(
-              onPressed: () {},
-              child: const Text(
-                "Ini adalah Outlined Button",
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              width: 200,
-              child: const TextField(
-                decoration: InputDecoration(
-                    hintText: "Nama Lengkap",
-                    icon: Icon(Icons.person),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)))),
-              ),
-            ),
-            Container(
-              width: 200,
-              child: const TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    hintText: "Password",
-                    icon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)))),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
