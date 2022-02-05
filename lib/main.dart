@@ -235,8 +235,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                         },
                                         child: Icon(
                                           _obscurepasswordLogin
-                                              ? Icons.visibility
-                                              : Icons.visibility_off,
+                                              ? Icons.visibility_off
+                                              : Icons.visibility,
                                           color: Colors.black,
                                         ))
                                     : null,
@@ -382,8 +382,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                         },
                                         child: Icon(
                                           _obscurepasswordRegister
-                                              ? Icons.visibility
-                                              : Icons.visibility_off,
+                                              ? Icons.visibility_off
+                                              : Icons.visibility,
                                           color: Colors.black,
                                         ))
                                     : null,
@@ -417,8 +417,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                         },
                                         child: Icon(
                                           _obscureconfirmpasswordRegister
-                                              ? Icons.visibility
-                                              : Icons.visibility_off,
+                                              ? Icons.visibility_off
+                                              : Icons.visibility,
                                           color: Colors.black,
                                         ))
                                     : null,
