@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_flutter/screen/halaman_feeds.dart';
 import 'package:training_flutter/screen/halaman_kontak.dart';
 import 'screen/halaman_home.dart';
 
@@ -12,11 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: HalamanKontak(),
+      home: HalamanFeeds(),
     );
   }
 }

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class listkontak extends StatelessWidget {
-  final String namaKontak;
-  final String nomorTelepon;
-  final String inisial;
+class ListKontak extends StatelessWidget {
+  final String? namaKontak;
+  final String? nomorTelepon;
+  final String? inisial;
 
-  const listkontak({
+  const ListKontak({
     Key? key,
-    required this.namaKontak,
-    required this.nomorTelepon,
-    required this.inisial,
+    this.namaKontak,
+    this.nomorTelepon,
+    this.inisial,
   }) : super(key: key);
 
   @override
@@ -17,12 +17,12 @@ class listkontak extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          title: Text(namaKontak),
-          subtitle: Text(nomorTelepon),
+          title: Text(namaKontak!),
+          subtitle: Text(nomorTelepon!),
           leading: CircleAvatar(
-            child: Text(inisial),
+            child: Text(inisial!),
           ),
-          trailing: Icon(Icons.phone),
+          trailing: const Icon(Icons.phone),
         ),
         const Divider(),
       ],

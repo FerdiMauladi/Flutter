@@ -3,7 +3,7 @@ import 'package:training_flutter/component/listkontak.dart';
 import 'package:training_flutter/model/datakontak.dart';
 
 class HalamanKontak extends StatefulWidget {
-  HalamanKontak({Key? key}) : super(key: key);
+  const HalamanKontak({Key? key}) : super(key: key);
 
   @override
   State<HalamanKontak> createState() => _HalamanKontakState();
@@ -25,6 +25,20 @@ class _HalamanKontakState extends State<HalamanKontak> {
         namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
     DataKontak(
         namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
+    DataKontak(
+        namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
+    DataKontak(
+        namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
+    DataKontak(
+        namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
+    DataKontak(
+        namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
+    DataKontak(
+        namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
+    DataKontak(
+        namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
+    DataKontak(
+        namaKontak: "Orang 1", nomorTelepon: "0812345678", inisial: "OR"),
   ];
 
   @override
@@ -32,7 +46,7 @@ class _HalamanKontakState extends State<HalamanKontak> {
     return Scaffold(
       body: ListView(
         children: data
-            .map((dataText) => listkontak(
+            .map((dataText) => ListKontak(
                 namaKontak: dataText.namaKontak,
                 nomorTelepon: dataText.nomorTelepon,
                 inisial: dataText.inisial))
