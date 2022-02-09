@@ -28,7 +28,7 @@ class listfeeds extends StatelessWidget {
             title: Text(userName!),
             subtitle: Text(daerahPosting!),
             leading: CircleAvatar(
-              child: Text("FM"),
+              child: Text(userName!.substring(0, 1)),
             ),
             trailing: Icon(Icons.more_vert),
           ),
