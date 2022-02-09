@@ -28,7 +28,7 @@ class listfeeds extends StatelessWidget {
             title: Text(userName!),
             subtitle: Text(daerahPosting!),
             leading: CircleAvatar(
-              child: Text(userName!.substring(0, 1)),
+              child: Text(userName!.substring(0, 2)),
             ),
             trailing: Icon(Icons.more_vert),
           ),
@@ -47,7 +47,7 @@ class listfeeds extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 8.0),
+                margin: EdgeInsets.only(top: 8.0, left: 5.0),
                 padding: EdgeInsets.all(5.0),
                 child: const Icon(
                   Icons.favorite_outline_outlined,
@@ -55,7 +55,7 @@ class listfeeds extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 8.0),
+                margin: EdgeInsets.only(top: 8.0, left: 5.0),
                 padding: EdgeInsets.all(5.0),
                 child: const Icon(
                   Icons.mode_comment_outlined,
@@ -63,7 +63,7 @@ class listfeeds extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 8.0),
+                margin: EdgeInsets.only(top: 8.0, left: 5.0),
                 padding: EdgeInsets.all(5.0),
                 child: const Icon(
                   Icons.send_outlined,
@@ -83,7 +83,7 @@ class listfeeds extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.centerLeft,
-            margin: EdgeInsets.only(top: 5.0),
+            margin: EdgeInsets.only(top: 5.0, left: 5.0),
             padding: const EdgeInsets.only(left: 5.0),
             child: Text(
               likes! + " Suka",
@@ -96,7 +96,7 @@ class listfeeds extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.only(top: 5.0),
+                margin: const EdgeInsets.only(top: 5.0, left: 5.0),
                 padding: const EdgeInsets.only(left: 5.0),
                 child: Text(
                   userName!,
@@ -119,7 +119,7 @@ class listfeeds extends StatelessWidget {
             ],
           ),
           Container(
-            margin: const EdgeInsets.only(top: 5.0),
+            margin: const EdgeInsets.only(top: 5.0, left: 5.0),
             padding: const EdgeInsets.only(left: 5.0),
             alignment: Alignment.centerLeft,
             child: const Text(
@@ -131,7 +131,7 @@ class listfeeds extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 5.0),
+            margin: const EdgeInsets.only(top: 5.0, bottom: 10.0, left: 5.0),
             padding: const EdgeInsets.only(left: 5.0),
             alignment: Alignment.centerLeft,
             child: Text(
