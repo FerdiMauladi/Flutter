@@ -30,7 +30,7 @@ class listfeeds extends StatelessWidget {
             leading: CircleAvatar(
               child: Text(userName!.substring(0, 2)),
             ),
-            trailing: Icon(Icons.more_vert),
+            trailing: const Icon(Icons.more_vert),
           ),
           const Divider(
             indent: 1,
@@ -47,8 +47,8 @@ class listfeeds extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 8.0, left: 5.0),
-                padding: EdgeInsets.all(5.0),
+                margin: const EdgeInsets.only(top: 8.0, left: 5.0),
+                padding: const EdgeInsets.all(5.0),
                 child: const Icon(
                   Icons.favorite_outline_outlined,
                   size: 35.0,
