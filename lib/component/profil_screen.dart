@@ -5,6 +5,7 @@ class ProfilScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
@@ -120,15 +121,87 @@ class ProfilScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              OutlinedButton(
-                onPressed: () {},
-                child: const Text(
-                  "Ini adalah Outlined Button",
-                  style: TextStyle(
-                    color: Colors.white,
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                height: 35,
+                width: size.width,
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      side: const BorderSide(
+                    width: 1.5,
+                    color: Colors.grey,
+                  )),
+                  onPressed: () {},
+                  child: const Text(
+                    "Edit Profil",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
+              Container(
+                margin: const EdgeInsets.only(top: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 35,
+                      width: size.width * 0.30,
+                      child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                            side: const BorderSide(
+                          width: 1.5,
+                          color: Colors.grey,
+                        )),
+                        onPressed: () {},
+                        child: const Text(
+                          "Fitur Iklan",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 35,
+                      width: size.width * 0.30,
+                      child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                            side: const BorderSide(
+                          width: 1.5,
+                          color: Colors.grey,
+                        )),
+                        onPressed: () {},
+                        child: const Text(
+                          "Insight",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 35,
+                      width: size.width * 0.30,
+                      child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                            side: const BorderSide(
+                          width: 1.5,
+                          color: Colors.grey,
+                        )),
+                        onPressed: () {},
+                        child: const Text(
+                          "Kontak",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
