@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_flutter/screen/halaman_feeds.dart';
-import 'package:training_flutter/screen/halaman_kontak.dart';
 import 'package:training_flutter/screen/halaman_utama.dart';
-import 'screen/halaman_home.dart';
 
 void main() {
   runApp(const MyApp());
