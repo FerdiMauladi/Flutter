@@ -73,6 +73,7 @@ class _HalamanFeedsState extends State<HalamanFeeds> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.black,
       body: ListView(
         children: data
             .map(

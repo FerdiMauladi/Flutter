@@ -22,15 +22,16 @@ class listfeeds extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Card(
+      color: Colors.black,
       child: Column(
         children: [
           ListTile(
-            title: Text(userName!),
-            subtitle: Text(daerahPosting!),
+            title: Text(userName!, style: const TextStyle(color: Colors.white),),
+            subtitle: Text(daerahPosting!, style: const TextStyle(color: Colors.white),),
             leading: CircleAvatar(
               child: Text(userName!.substring(0, 2)),
             ),
-            trailing: const Icon(Icons.more_vert),
+            trailing: const Icon(Icons.more_vert, color: Colors.white,),
           ),
           const Divider(
             indent: 1,
@@ -52,6 +53,7 @@ class listfeeds extends StatelessWidget {
                 child: const Icon(
                   Icons.favorite_outline_outlined,
                   size: 35.0,
+                  color: Colors.white,
                 ),
               ),
               Container(
@@ -60,6 +62,7 @@ class listfeeds extends StatelessWidget {
                 child: const Icon(
                   Icons.mode_comment_outlined,
                   size: 30.0,
+                  color: Colors.white,
                 ),
               ),
               Container(
@@ -68,6 +71,7 @@ class listfeeds extends StatelessWidget {
                 child: const Icon(
                   Icons.send_outlined,
                   size: 35.0,
+                  color: Colors.white,
                 ),
               ),
               new Spacer(),
@@ -77,6 +81,7 @@ class listfeeds extends StatelessWidget {
                 child: const Icon(
                   Icons.bookmark_outline_outlined,
                   size: 35.0,
+                  color: Colors.white,
                 ),
               ),
             ],
@@ -89,6 +94,7 @@ class listfeeds extends StatelessWidget {
               likes! + " Suka",
               style: const TextStyle(
                 fontSize: 16.0,
+                color: Colors.white,
               ),
             ),
           ),
@@ -103,6 +109,7 @@ class listfeeds extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16.0,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -113,6 +120,7 @@ class listfeeds extends StatelessWidget {
                   caption!,
                   style: const TextStyle(
                     fontSize: 16.0,
+                    color: Colors.white,
                   ),
                 ),
               ),

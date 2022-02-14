@@ -33,16 +33,19 @@ class _HalamanUtamaState extends State<HalamanUtama> {
         title: Text(
           judulHalaman.elementAt(indexHalaman),
           style: const TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
+          statusBarColor: Colors.black,
         ),
       ),
       body: Screen.elementAt(indexHalaman),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
+        selectedItemColor: Colors.red,
+        unselectedItemColor: Colors.white,
         currentIndex: indexHalaman,
         onTap: (value) {
           setState(() {
