@@ -26,12 +26,21 @@ class listfeeds extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            title: Text(userName!, style: const TextStyle(color: Colors.white),),
-            subtitle: Text(daerahPosting!, style: const TextStyle(color: Colors.white),),
+            title: Text(
+              userName!,
+              style: const TextStyle(color: Colors.white),
+            ),
+            subtitle: Text(
+              daerahPosting!,
+              style: const TextStyle(color: Colors.white),
+            ),
             leading: CircleAvatar(
               child: Text(userName!.substring(0, 2)),
             ),
-            trailing: const Icon(Icons.more_vert, color: Colors.white,),
+            trailing: const Icon(
+              Icons.more_vert,
+              color: Colors.white,
+            ),
           ),
           const Divider(
             indent: 1,
@@ -74,7 +83,7 @@ class listfeeds extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              new Spacer(),
+              const Spacer(),
               Container(
                 margin: EdgeInsets.only(top: 8.0),
                 padding: EdgeInsets.all(5.0),

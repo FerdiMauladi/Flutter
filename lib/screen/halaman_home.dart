@@ -58,7 +58,7 @@ class _HalamanHomeState extends State<HalamanHome> {
                   Icons.search,
                   size: 50.0,
                   color: Colors.red,
-                )
+                ),
               ],
             ),
             const SizedBox(
